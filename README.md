@@ -1,13 +1,14 @@
 # Terraform Learn
+This repo is a note to learn terraform.
+Four demos to make you familiar with terraform.
+
+**Prerequisites**: basic knowledge of cloud ecosystem. e.g. VPC, Subnet, Internet Gateway, etc.
 
 ## Intro
 [Terraform](https://www.terraform.io/) is a tool to automate infrastructure operations for cloud, data center services.
 We only need to configure the desired state of the infrastructure, Terraform will generate the execution plan in order and execute it.
 
-This repo is a note to learn terraform.
-Three demos to make you familiar with terraform.
 
-**Prerequisites**: basic knowledge of cloud ecosystem. e.g. VPC, Subnet, Internet Gateway, etc.
 
 ### [Tutorial](tutorial/)
 For those who are totally new to terraform, learn basic concept of terraform and how to write simple terraform config in this tutorial.
@@ -38,7 +39,7 @@ Resources covered:
 - EC2 instances (nginx)
 
 ### [Nginx Demo Module (self)](nginx-demo-module-self/)
-The same as Nginx Demo, but modularize the configuration to make the structure much clear.
+The same as Nginx Demo, but **modularize** the configuration to make the structure much clear.
 
 Typical project structure:
 ```bash
@@ -57,4 +58,4 @@ Typical project structure:
 
 ### [Nginx Demo Module (registry)](nginx-demo-module-registry/)
 The same as Nginx Demo Module, but not only modularize it, we also use existing modules from [Terraform Registry](https://registry.terraform.io/).
-In addition, we store terraform state on S3 to make sure all related repositories are using the same terraform state.
+In addition, we **store terraform state on S3** to make sure all related repositories are using the same terraform state.
