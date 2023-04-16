@@ -12,17 +12,21 @@
 
 ## Launch
 ```sh
+terraform init
 terraform apply -auto-approve
 ```
 
-## SSH check
-```sh
-ssh -i ~/.ssh/id_rsa ec2-user@[public_ip]
-# ~/.ssh/id_rsa is default, so can simply use this command
-ssh ec2-user@[public_ip]
-# e.g.
-#   ssh ec2-user@13.57.255.153
-```
+## Check
+- SSH
+  ```sh
+  ssh -i ~/.ssh/id_rsa ec2-user@[public_ip]
+  # ~/.ssh/id_rsa is default, so can simply use this command
+  ssh ec2-user@[public_ip]
+  # e.g.
+  #   ssh ec2-user@13.57.255.153
+  ```
+- Browser (Nginx)
+  `http://[public_ip]:8080/`
 
 ## Destroy
 ```sh
@@ -30,23 +34,22 @@ terraform destroy -auto-approve
 ```
 
 ## Module
-- Define Module
-  - Define in `modules` directory
-  - in root directory, use `modules` by `module` keyword
-    ```terraform
-    module "myapp-subnet" {
-      source = "./modules/subnet"
-      # variables
-      env_prefix = var.env_prefix
-      vpc_cidr_block = var.vpc_cidr_block
-      subnet_cidr_block = var.subnet_cidr_block
-      availability_zone = var.availability_zone
-      vpc_id = aws_vpc.myapp-vpc.id
-    }
-    ```
-  - use outputs of module
-    ```terraform
-    module.[module-name].[output-key]
-    # e.g.
-    #   module.myapp-subnet.subnet.id
-    ```
+- Define in `modules` directory
+- in root directory, use `modules` by `module` keyword
+  ```sh
+  module "myapp-subnet" {
+    source = "./modules/subnet"
+    # variables
+    env_prefix = var.env_prefix
+    vpc_cidr_block = var.vpc_cidr_block
+    subnet_cidr_block = var.subnet_cidr_block
+    availability_zone = var.availability_zone
+    vpc_id = aws_vpc.myapp-vpc.id
+  }
+  ```
+- use outputs of module
+  ```sh
+  module.[module-name].[output-key]
+  # e.g.
+  #   module.myapp-subnet.subnet.id
+  ```

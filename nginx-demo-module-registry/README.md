@@ -8,9 +8,7 @@
   # if the file is not exists, create it with the following command
   ssh-keygen
   ```
-- Copy and paste key location to terraform variable
-  - public key: `ec2_public_key_file`
-  - private key: `ec2_private_key_file`
+- Copy and paste public key location to terraform variable `ec2_public_key_file`
 
 ## Launch
 ```sh
@@ -27,7 +25,7 @@ terraform apply -auto-approve
   # e.g.
   #   ssh ec2-user@13.57.255.153
   ```
-- Browser
+- Browser (Nginx)
   `http://[public_ip]:8080/`
 
 ## Destroy
