@@ -1,0 +1,13 @@
+env_prefix = "dev"
+access_key = ""
+secret_key = ""
+region = "us-west-1"
+
+vpc_cidr_block = "10.0.0.0/16"
+subnet_cidr_block = "10.0.10.0/24"
+availability_zone = "us-west-1b"
+
+my_ip = ""
+ec2_instance_type = "t2.micro"
+ec2_public_key_file = "/Users/xxxx/.ssh/id_rsa.pub"
+ec2_private_key_file = "/Users/xxxx/.ssh/id_rsa"
