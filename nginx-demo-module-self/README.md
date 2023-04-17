@@ -26,7 +26,7 @@ terraform apply -auto-approve
   #   ssh ec2-user@13.57.255.153
   ```
 - Browser (Nginx)
-  `http://[public_ip]:8080/`
+  - `http://[public_ip]:8080/`
 
 ## Destroy
 ```sh
